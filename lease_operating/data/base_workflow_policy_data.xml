@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="base_workflow_lease_operating_out" model="base.workflow_policy">
+    <field name="model_id" ref="lease_operating.model_lease_operating_out" />
+</record>
+<record
+            id="base_workflow_line_lease_operating_out_confirm"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="lease_operating.base_workflow_lease_operating_out" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','lease.operating_out'),('name','=','confirm_ok')]"
+            />
+    <field
+                name="python_code"
+            >result = document.type_id.lease_confirm_grp_ids.ids</field>
+</record>
+<record
+            id="base_workflow_line_lease_operating_out_restart_approval"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="lease_operating.base_workflow_lease_operating_out" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','lease.operating_out'),('name','=','restart_approval_ok')]"
+            />
+    <field
+                name="python_code"
+            >result = document.type_id.lease_restart_approval_grp_ids.ids</field>
+</record>
+<record
+            id="base_workflow_line_lease_operating_out_start"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="lease_operating.base_workflow_lease_operating_out" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','lease.operating_out'),('name','=','open_ok')]"
+            />
+    <field name="python_code">result = document.type_id.lease_start_grp_ids.ids</field>
+</record>
+<record
+            id="base_workflow_line_lease_operating_out_finish"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="lease_operating.base_workflow_lease_operating_out" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','lease.operating_out'),('name','=','finish_ok')]"
+            />
+    <field name="python_code">result = document.type_id.lease_finish_grp_ids.ids</field>
+</record>
+<record
+            id="base_workflow_line_lease_operating_out_cancel"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="lease_operating.base_workflow_lease_operating_out" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','lease.operating_out'),('name','=','cancel_ok')]"
+            />
+    <field name="python_code">result = document.type_id.lease_cancel_grp_ids.ids</field>
+</record>
+<record
+            id="base_workflow_line_lease_operating_out_restart"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="lease_operating.base_workflow_lease_operating_out" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','lease.operating_out'),('name','=','restart_ok')]"
+            />
+    <field
+                name="python_code"
+            >result = document.type_id.lease_restart_grp_ids.ids</field>
+</record>
+<record
+            id="base_workflow_line_lease_operating_out_terminate"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="lease_operating.base_workflow_lease_operating_out" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','lease.operating_out'),('name','=','terminate_ok')]"
+            />
+    <field
+                name="python_code"
+            >result = document.type_id.lease_terminate_grp_ids.ids</field>
+</record>
+
+
+</data>
+</openerp>

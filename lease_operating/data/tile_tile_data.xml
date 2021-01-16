@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="tile_tile_service_contract_draft" model="tile.tile">
+    <field name="name">All Service Contract: Draft</field>
+    <field name="domain">
+    [
+        ("state", "=", "draft"),
+    ]
+    </field>
+    <field name="model_id" ref="service_contract.model_service_contract" />
+    <field name="action_id" ref="service_contract.service_contract_action" />
+    <field name="primary_function">count</field>
+</record>
+
+<record id="tile_tile_service_contract_confirm" model="tile.tile">
+    <field name="name">All Service Contract: Waiting for Availability</field>
+    <field name="domain">
+    [
+        ("state", "=", "confirm"),
+    ]
+    </field>
+    <field name="model_id" ref="service_contract.model_service_contract" />
+    <field name="action_id" ref="service_contract.service_contract_action" />
+    <field name="primary_function">count</field>
+</record>
+
+<record id="tile_tile_service_contract_approve" model="tile.tile">
+    <field name="name">All Service Contract: Ready to Start</field>
+    <field name="domain">
+    [
+        ("state", "=", "approve"),
+    ]
+    </field>
+    <field name="model_id" ref="service_contract.model_service_contract" />
+    <field name="action_id" ref="service_contract.service_contract_action" />
+    <field name="primary_function">count</field>
+</record>
+
+<record id="tile_tile_service_contract_open" model="tile.tile">
+    <field name="name">All Service Contract: In Progress</field>
+    <field name="domain">
+    [
+        ("state", "=", "open"),
+    ]
+    </field>
+    <field name="model_id" ref="service_contract.model_service_contract" />
+    <field name="action_id" ref="service_contract.service_contract_action" />
+    <field name="primary_function">count</field>
+</record>
+
+<record id="tile_tile_service_contract_payment_term_uninvoiced" model="tile.tile">
+    <field name="name">All Payment Term: Uninvoiced</field>
+    <field name="domain">
+    [
+        ("contract_id.state", "=", "open"),
+        ("state", "=", "uninvoiced"),
+    ]
+    </field>
+    <field
+                name="model_id"
+                ref="service_contract.model_service_contract_fix_item_payment_term"
+            />
+    <field name="primary_function">count</field>
+</record>
+</data>
+</openerp>

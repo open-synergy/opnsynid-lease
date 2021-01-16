@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 PT. Simetri Sinergi Indonesia
+     Copyright 2021 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<record id="lease_operating_type_view_tree" model="ir.ui.view">
+    <field name="name">Operating Lease Type</field>
+    <field name="model">lease.operating_type</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="code" />
+            <field name="direction" />
+        </tree>
+    </field>
+</record>
+
+<record id="lease_operating_type_view_form" model="ir.ui.view">
+    <field name="name">Operating Lease Type</field>
+    <field name="model">lease.operating_type</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+            </header>
+            <sheet>
+                <div class="oe_right oe_button_box" name="buttons">
+                </div>
+                <group name="group_general_information" colspan="4" col="2">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="active" />
+                    <field name="currency_id" invisible="1" />
+                    <field name="direction" />
+                </group>
+                <notebook>
+                    <page name="lease" string="Lease Configuration">
+                        <group
+                                    name="lease_1"
+                                    colspan="4"
+                                    col="2"
+                                    string="General Configuration"
+                                >
+                            <field name="lease_sequence_id" />
+                        </group>
+                        <group
+                                    name="lease_2"
+                                    colspan="4"
+                                    col="2"
+                                    string="Interest &amp; Installment"
+                                >
+                            <field
+                                        name="maximum_lease_amount"
+                                        widget="monetary"
+                                        options="{'currency_field':'currency_id'}"
+                                    />
+                            <field name="maximum_lease_installment_period" />
+                            <field name="lease_period_lenght" />
+                            <field name="lease_payment_time" />
+                        </group>
+                    </page>
+                    <page name="note" string="Note">
+                        <field name="note" />
+                    </page>
+                </notebook>
+        </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="lease_operating_type_action" model="ir.actions.act_window">
+    <field name="name">Operating Lease Type</field>
+    <field name="res_model">lease.operating_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+            name="Lease Type"
+            parent="lease_operating_configuration_menu"
+            id="lease_operating_type_menu"
+            action="lease_operating_type_action"
+        />
+</data>
+</openerp>

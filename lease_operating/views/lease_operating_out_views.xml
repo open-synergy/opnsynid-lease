@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+<record id="lease_operating_out_view_search" model="ir.ui.view">
+    <field name="name">lease.operating_out form</field>
+    <field name="model">lease.operating_out</field>
+    <field name="inherit_id" ref="lease_operating.lease_operating_common_view_search" />
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data />
+    </field>
+</record>
+
+<record id="lease_operating_out_view_tree" model="ir.ui.view">
+    <field name="name">lease.operating_out tree</field>
+    <field name="model">lease.operating_out</field>
+    <field name="inherit_id" ref="lease_operating.lease_operating_common_view_tree" />
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data />
+    </field>
+</record>
+
+<record id="lease_operating_out_view_form" model="ir.ui.view">
+    <field name="name">lease.operating_out form</field>
+    <field name="model">lease.operating_out</field>
+    <field name="inherit_id" ref="lease_operating.lease_operating_common_view_form" />
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data />
+    </field>
+</record>
+
+<record id="lease_operating_out_action" model="ir.actions.act_window">
+    <field name="name">Operating Lease Out</field>
+    <field name="res_model">lease.operating_out</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+            name="Lease Out"
+            parent="lease_operating_menu"
+            id="lease_operating_out_menu"
+            action="lease_operating_out_action"
+        />
+</data>
+</openerp>

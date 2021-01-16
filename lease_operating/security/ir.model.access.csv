@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lease_operating_type_employee,lease.operating_type - user,model_lease_operating_type,base.group_user,1,1,1,1
+access_lease_operating_type_all,lease.operating_type - all,model_lease_operating_type,,1,0,0,0
+access_lease_operating_out_employee,lease.operating_out - user,model_lease_operating_out,base.group_user,1,1,1,1
+access_lease_operating_out_all,lease.operating_out - all,model_lease_operating_out,,1,0,0,0
+access_lease_operating_schedule_out_employee,lease.operating_schedule_out - user,model_lease_operating_schedule_out,base.group_user,1,1,1,1
+access_lease_operating_schedule_out_all,lease.operating_schedule_out - all,model_lease_operating_schedule_out,,1,0,0,0
