@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+<data>
+
+<menuitem id="lease_app_menu" name="Lease" sequence="70" />
+
+<menuitem id="lease_root_menu" name="Lease" sequence="1" parent="lease_app_menu" />
+
+<menuitem id="lease_report_menu" name="Report" sequence="98" parent="lease_app_menu" />
+
+<menuitem
+            id="lease_configuration_menu"
+            name="Configuration"
+            sequence="99"
+            parent="lease_app_menu"
+        />
+
+
+</data>
+</openerp>
